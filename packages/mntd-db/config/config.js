@@ -1,8 +1,8 @@
 'use strict'
-
+require('dotenv').config()
+console.log(process.env.DATABASE_URL)
 const path = require('path')
 
-// ok: MIgrate to .env add into you .env file this var and replace for your settings
 module.exports = {
   development: {
     username: process.env.PG_USER,
@@ -17,6 +17,7 @@ module.exports = {
     storage: path.join(__dirname, 'secrets_dev.db')
   },
   production: {
-    use_env_variable: 'DATABASE_URL'
+    use_env_variable: 'DATABASE_URL',
+    dialect: 'postgres'
   }
 }
