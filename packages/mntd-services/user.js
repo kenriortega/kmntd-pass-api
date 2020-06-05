@@ -42,14 +42,15 @@ module.exports = {
 
     const oldKey = generateKey(oldPassword)
     const newKey = generateKey(newPassword)
-    const redis = db.createRedisClient()
-    redis.publish(
-      'update-pass',
-      JSON.stringify({
-        username,
-        oldKey,
-        newKey
-      })
-    )
+    // const redis = db.createRedisClient()
+    // redis.publish(
+    //   'update-pass',
+    //   JSON.stringify({
+    //     username,
+    //     oldKey,
+    //     newKey
+    //   })
+    // )
+    await secretServices.updateAllSecret(username, oldKey, newKey)
   }
 }
