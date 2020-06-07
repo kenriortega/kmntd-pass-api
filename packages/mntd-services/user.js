@@ -51,6 +51,6 @@ module.exports = {
     //     newKey
     //   })
     // )
-    await secretServices.updateAllSecret(username, oldKey, newKey)
+    await updateAllSecret(username, oldKey, newKey)
   }
 }
