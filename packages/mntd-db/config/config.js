@@ -17,8 +17,7 @@ module.exports = {
     storage: path.join(__dirname, 'secrets_dev.db')
   },
   production: {
-    // use_env_variable: 'DATABASE_URL',
-    use_env_variable: 'DATABASE_URL_SSL',
+    use_env_variable: 'DATABASE_URL',
     dialect: 'postgres'
   }
 }
